@@ -1,7 +1,7 @@
 import pandas as pd
 
 sondes = {'WK545': [x for x in range(1992, 2004)],
-          'WK546' : [x for x in range(2001, 2021)]
+          'WK546' : [x for x in range(2001, 2021)],
           'AK539' : [x for x in range(1992, 1994)],
           'TO535' : [x for x in range(1992, 2003)],
           'TO536' : [x for x in range(2001, 2021)],
