@@ -31,4 +31,4 @@ def get_earthquake_dataset(start_year, end_year, path):
     for y in range(start_year, end_year+1):
         get_earthquake_data_csv(y, 4.5, path)
         
-get_earthquake_dataset(1995, 2000, 'earthquakes_data/')
+get_earthquake_dataset(1992, 2020, 'earthquakes_data/')
