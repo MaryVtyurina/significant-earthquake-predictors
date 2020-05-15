@@ -8,13 +8,15 @@ You might need to install pytorch before running the models. https://pytorch.org
 
 ### Data
 
-Data about earthquakes was taken from USGS website (https://www.usgs.gov/natural-hazards/earthquake-hazards/earthquakes)
+Data about earthquakes was taken from [USGS website](https://www.usgs.gov/natural-hazards/earthquake-hazards/earthquakes)
 
 The ionisphere data was taken from:
-* National centers for environmental information NOAA - https://www.ngdc.noaa.gov/stp/iono/ionogram.html
-* National Institute of Information and Communication Technology in Japan NICT - http://wdc.nict.go.jp/IONO/HP2009/ISDJ/index-E.html 
+* National centers for environmental information [NOAA](https://www.ngdc.noaa.gov/stp/iono/ionogram.html)
+* National Institute of Information and Communication Technology in Japan [NICT](http://wdc.nict.go.jp/IONO/HP2009/ISDJ/index-E.html) 
 
-### Filling missing values
+### Missing values
+The data with more than 50% of missing values was not concidered. 
+The data was grouped by earthquake id, date and time and then the missing values were filled with mean of such group.
 ### Datasets
 ### Models
 #### Linear Regression + PCA
