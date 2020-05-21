@@ -44,8 +44,8 @@ Feature selection with L1 regularization id at <em>models/L1_feature_selection.i
 
 Feature selection with NN regularization id at <em>models/NN_ablation_test.ipynb</em>
 
-The Neural network architecture is described at the inage below:
-
+The Neural network architecture is described at the image below:
+![NN schema](imgs/Model_FC_eng.png)
 ## Acknowledgments
 
 * The data from NOAA was taken from <em>https://github.com/DaryaChaplygina/ionoshpere_dataset</em> 
