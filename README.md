@@ -31,7 +31,9 @@ The data were grouped by earthquake id, date and time and then the missing value
 
 We applied two approaches when creating datasets.
 
-1. Described in the [paper by Pulinets 2004](https://www.researchgate.net/publication/215972520_Ionospheric_Precursors_of_Earthquakes_Recent_Advances_in_Theory_and_Practical_Applications) this approach based on the earthquake preparation zone. We consider pairs of sondes - one inside the preparation zone, the other one - outside. 
+#### Location-formed dataset
+
+ Described in the [paper by Pulinets 2004](https://www.researchgate.net/publication/215972520_Ionospheric_Precursors_of_Earthquakes_Recent_Advances_in_Theory_and_Practical_Applications) this approach based on the earthquake preparation zone. We consider pairs of sondes - one inside the preparation zone, the other one - outside. 
 
 <img src="imgs/pair_of_sondes.png" width="300">
 
@@ -52,11 +54,18 @@ The structure of the file is presented below, where `id` is an earthquake id, `h
 |-------  |:------:|------:|------:   |------:       |------: |------:  |------:|------:|
 | 5.925   |  3003.1| 2.285      | ... | ak0028jvqcwp | 2002-06-21 | 7   |0  | 0  |
 
-2. We take data from sondes inside the preparation zone as positive samples. Then we took data from the same sondes but 1 year ago of 1 year after the earthquake (in case if there were no other earthquakes registered at that time). Then the data were flatten in a way that 1 earthquke is 1 sample (1 row) to run the LinearRegression. The file is located in the <em>NOAA/datasets_LR_model/flattened_ds_y_ago_y_after_7days.csv</em>
-The other version of the same data which was not flattened and was used for NN model is located at <em>NOAA/datasets_NN_model/sondes_in_ml.csv and sondes_year_before_after_ml.csv</em>
 
+#### Time-formed dataset
 
-All the datasets are stored if .csv format with separator = ','
+The data from sondes inside the preparation zone are positive samples. Then in order to create negative samples we took data from the same sondes but 1 year ago of 1 year after the earthquake (in case if there were no other earthquakes registered at that time). 
+
+Then the data was aggregated by an hour and flatten in a way that 1 earthquke is 1 sample (1 row) to run the LinearRegression. The file is located in the <em>NOAA/datasets_LR_model/flattened_ds_y_ago_y_after_7days.csv</em>
+
+The other version of the same data with 30 minutes data samples which was not flattened and was used for NN model is located at <em>NOAA/datasets_NN_model/sondes_in_ml.csv and sondes_year_before_after_ml.csv</em>
+
+The files have the same structure as the Location formed dataset.
+
+All the datasets are stored in .csv format with separator = ','
 
 ### Models
 Several different modes were used for feature selection and feature creation (PCA).
@@ -74,7 +83,9 @@ Feature selection with L1 regularization id at <em>models/L1_feature_selection.i
 Feature selection with NN regularization id at <em>models/NN_ablation_test.ipynb</em>
 
 The Neural network architecture is described at the image below:
-![NN schema](imgs/Model_FC_eng.png)
+
+<img src="imgs/Model_FC_eng.png" width="300">
+
 ## Acknowledgments
 
 * The data from NOAA was taken from <em>https://github.com/DaryaChaplygina/ionoshpere_dataset</em> 
