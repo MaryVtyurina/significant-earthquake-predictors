@@ -65,7 +65,7 @@ The other version of the same data with 30 minutes data samples which was not fl
 
 The files have the same structure as the Location formed dataset.
 
-All the datasets are stored in .csv format with separator = ','
+All the datasets are stored in .csv format with separator = `,`
 
 ### Principal component analysis 
 
