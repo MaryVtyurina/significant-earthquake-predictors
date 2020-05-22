@@ -41,9 +41,9 @@ Then the data was aggregated by an hour and was flattened in a way that 1 earthq
 The files with data are located in the <em>NOAA/datasets_LR_model</em>
 The structure of the file is presented below:
 
-| D_0_0   |   D_0_1|  D_0_2 |  ...|  D_7_23 | ... | foF2_0_0 |  ...  | foF2_7_23 | res |
-|-------  |:------:|------:|------:|------:|------:|------:  |------:|------:|------:|
-| 3000.0  |  3003.1| 3001.1 | ... | 3001.1 |  ... | 5.925    | ...   | 6.43  |0    |
+| D_0_0   |   D_0_1|   ...|  D_7_23 | ... | foF2_0_0 |  ...  | foF2_7_23 | res |
+|-------  |:------:|------:|------:|------:|------:  |------:|------:|------:|
+| Value of parameter D at 0 day before the earthquake at 00:00 |  Value of parameter D at 0 day before the earthquake at 01:00 | ... | Value of parameter D at 7 day before the earthquake at 23:00  |  ... | Value of parameter foF2 at 0 day before the earthquake at 00:00    | ...   | Value of parameter foF2 at 7 day before the earthquake at 23:00  | target value 0 - no earthquake, 1 - is earthquake  |
  
 
 The other version of the same data with 30 minutes data samples which were not flattened and were used for NN model is located at <em>NOAA/datasets_NN_model/sondes_in_ml.csv (should be taken as positive sample) and sondes_out_ml.csv</em> (should be taken as negative sample)
@@ -52,7 +52,7 @@ The structure of the file is presented below, where `id` is an earthquake id, `h
 
 | foF2   |   D     |  M(D)      |  ...|  id         | date    | nday   |  h    | m      | 
 |-------  |:------:|------:|------:   |------:       |------: |------:  |------:|------:|
-| 5.925   |  3003.1| 2.285      | ... | ak0028jvqcwp | 2002-06-21 | 7   |0  | 0  |
+| Value of parameter foF2  |   Value of parameter D|  Value of parameter M(D) | ... | earthquake id | date | days before the earthquake  |hour  | minute  |
 
 
 #### Time-formed dataset
