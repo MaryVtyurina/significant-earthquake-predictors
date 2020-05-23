@@ -69,12 +69,12 @@ All the datasets are stored in .csv format with separator = `,`
 
 ### Principal component analysis 
 
-We used Principal component analysis as a new approach to creating a feature for earthquake prediction. You can find precalculated features in `predictors/pca/pca_components.csv` and the pipeline for calculation in the `predictors/pca/ pca_calculation.ipynb`. The data was normalized before the components were calculated.
+We used Principal component analysis as a new approach to creating a feature for earthquake prediction. You can find precalculated features in `predictors/pca/pca_components_in_out.csv` for Location-formed dataset and `predictors/pca/pca_components_before_after.csv` for Time-formed dataset. The pipeline for calculation is in the `predictors/pca/ pca_calculation.ipynb`. The data was normalized before the components were calculated.
 
 The table has the following format:
-| id   |   date     |  nday                          |  h|  m         | foF2   | h'Es   |  comp_1    | comp_2     | 
-|-------:  |------:|------:|------:   |------:  |------: |------:  |------:|------:|
-| earthquake id |   date| days before the earthquake  | hour | minute | Value of parameter foF2  | Value of parameter h'Es  | component 1  | component 2  |
+| id   |   date     |  nday                          |  h|  m         | foF2   | h'Es   |  comp_1    | comp_2     | target     | 
+|-------:  |------:|------:|------:   |------:  |------: |------:  |------:|------:|------:|
+| earthquake id |   date| days before the earthquake  | hour | minute | Value of parameter foF2  | Value of parameter h'Es  | component 1  | component 2  | target value 0 - no earthquake, 1 - is earthquake |
 
 ### Models
 Several different modes were used for feature selection and feature creation (PCA).
